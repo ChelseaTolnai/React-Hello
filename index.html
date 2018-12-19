@@ -10,6 +10,18 @@
             color: lightblue;
             background-color: #222;
         }
+        h1 {
+            text-decoration: underline;
+        }
+        p {
+            font-weight: bold;
+        }
+        #age {
+            color: greenyellow;
+        }
+        #location {
+            color: turquoise;
+        }
     </style>
 </head>
 <body>
@@ -17,8 +29,15 @@
 </body>
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script type="text/javascript">
-    const myElement = React.createElement('h1', {className: 'chelsea-element'}, 'Hello, my name is ', 'Chelsea!');
+<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+<script type="text/babel">
+    const myElement = 
+        <div className="chelsea-element">
+            <h1 id="name">Hello, my name is Chelsea!</h1>
+            <p>I am <span id="age">26</span>.</p>
+            <p>I live in <span id="location">Rhode Island</span>.</p>
+        </div>
     ReactDOM.render(myElement, document.getElementById('app'));
 </script>
 </html>
