@@ -16,6 +16,9 @@
         p {
             font-weight: bold;
         }
+        #name{
+            color: dodgerblue;
+        }
         #age {
             color: greenyellow;
         }
@@ -32,12 +35,30 @@
 <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 <script type="text/babel">
-    const myElement = 
-        <div className="chelsea-element">
-            <h1 id="name">Hello, my name is Chelsea!</h1>
-            <p>I am <span id="age">26</span>.</p>
-            <p>I live in <span id="location">Rhode Island</span>.</p>
-        </div>
-    ReactDOM.render(myElement, document.getElementById('app'));
+    // const myElement = 
+    //     <div className="chelsea-element">
+    //         <h1 id="name">Hello, my name is Chelsea!</h1>
+    //         <p>I am <span id="age">26</span>.</p>
+    //         <p>I live in <span id="location">Rhode Island</span>.</p>
+    //     </div>
+    // ReactDOM.render(myElement, document.getElementById('app'));
+
+    const HelloComponent = () =>  <h1>Hello!</h1>;
+    const MyButton = () => <button>Click Me!</button>;
+    const BasicInput = () => <input type="text" placeholder="Change the world... " />;
+
+    const App = () => {
+        return (
+            <div className="chelsea-element">
+                <HelloComponent />
+                <p>My name is <span id="name">Chelsea</span>.</p>
+                <p>I am <span id="age">26</span>.</p>
+                <p>I live in <span id="location">Rhode Island</span>.</p>
+                <BasicInput />
+                <MyButton />
+            </div>
+        );
+    };
+    ReactDOM.render(<App />, document.getElementById('app'));   
 </script>
 </html>
